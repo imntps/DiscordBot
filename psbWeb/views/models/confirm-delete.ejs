@@ -1,0 +1,17 @@
+<div id="confirm-delete" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">ยืนยันการลบทีม</h2>
+
+        <form class="uk-form-horizontal uk-margin-large" method="post" action="/teamdelete">
+            <div class="uk-margin">
+                <input class="uk-input" id="form-horizontal-text" name="_id" type="hidden" value="<%= data._id %>">
+                <input class="uk-input" id="form-horizontal-text" name="secret" type="text" minlength="6" maxlength="6" pattern="[0-9]+" placeholder="รหัส">
+            </div>
+
+            <div class="uk-margin">
+                <button class="uk-button uk-button-danger" type="submit">ยืนยัน</button>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">ยกเลิก</button>
+            </div>
+        </form>
+    </div>
+</div>

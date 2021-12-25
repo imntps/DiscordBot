@@ -1,0 +1,8 @@
+<div class="uk-container uk-container-small">
+    <% if (typeof notify !== 'undefined') { %>
+    <div class="uk-alert-<%= notify.status %>" uk-alert>
+        <a class="uk-alert-close" uk-close></a>
+        <p class="uk-text-bold uk-text-center"><%= notify.msg %></p>
+    </div>
+    <% } %>
+</div>

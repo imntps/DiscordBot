@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Team</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script>
+    <style>body{ height: 100vh;}</style>
+</head>
+<body class="uk-background-muted">
+    
+    <%- include('parts/header') %>
+
+    <div class="uk-container uk-padding-small uk-margin-top">
+        <h1 class="uk-heading-divider">สร้างทีม</h1>
+
+        <form class="uk-form-horizontal uk-margin-large" method="post" enctype="multipart/form-data" action="/createsave">
+
+            <div class="uk-child-width-1-2@s" uk-grid>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ชื่อทีม</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="teamname" type="text" placeholder="ชื่อทีม" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ชื่อย่อทีม</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="teamtag" type="text" placeholder="ชื่อย่อทีม" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 1 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player1" type="text" placeholder="ผู้เล่นคนที่ 1" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 2 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player2" type="text" placeholder="ผู้เล่นคนที่ 2" required>
+                        </div>
+                    </div>
+                
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 3 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player3" type="text" placeholder="ผู้เล่นคนที่ 3" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 4 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player4" type="text" placeholder="ผู้เล่นคนที่ 4" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 5 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player5" type="text" placeholder="ผู้เล่นคนที่ 5">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 6 (IGN)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player6" type="text" placeholder="ผู้เล่นคนที่ 6">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">โลโก้ทีม</label>
+                        <div class="js-upload" uk-form-custom>
+                            <input type="file" multiple name="logo" required>
+                            <button class="uk-button uk-button-default" type="button" tabindex="-1">Upload</button>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text"><a href="https://www.remote.tools/remote-work/how-to-find-discord-id" target="_blank">ดิสคอร์ดไอดี</a> (สำหรับใช้คำสั่งจองห้องใน Discord)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="owner1" type="text" placeholder="ดิสคอร์ดไอดี" required>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text"><a href="https://www.remote.tools/remote-work/how-to-find-discord-id" target="_blank">ดิสคอร์ดไอดี</a> (สำหรับใช้คำสั่งจองห้องใน Discord)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="owner2" type="text" placeholder="ดิสคอร์ดไอดี">
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">รห้สสำหรับการแก้ไขข้อมูลทีมในเว็บไซต์ (ตัวเลข 6 ตัว)</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="secret" type="text" minlength="6" maxlength="6" pattern="[0-9]+" placeholder="รห้ส (ตัวเลข 6 ตัว)" required>
+                        </div>
+                    </div>
+                
+                    <button class="uk-button uk-button-primary" type="submit">ยืนยัน</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <%- include('parts/footer') %>
+</body>
+</html>

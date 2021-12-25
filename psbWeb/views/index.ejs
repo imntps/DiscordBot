@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script>
+    <style>body{ height: 100vh;}</style>
+</head>
+<body class="uk-background-muted">
+    
+    <%- include('parts/header') %>
+    <%- include('parts/notify') %>
+    
+    <!-- Menu Scrim -->
+    <div class="uk-container uk-padding-small uk-margin-top">
+        <h1 class="uk-heading-divider">Menu Scrim</h1>
+
+        <div class="uk-child-width-1-2@s" uk-grid>
+            <div>
+                <div class="uk-light uk-background-secondary uk-padding">
+                    <h3>สร้างทีมสำหรับการ Scrim</h3>
+                    <a href="/createteam"><button class="uk-button uk-button-default">สร้างทีม</button></a>
+                </div>
+            </div>
+            <div>
+                <div class="uk-light uk-background-secondary uk-padding">
+                    <h3>จัดการทีมสำหรับการ Scrim</h3>
+                    <a href="/manageteam"><button class="uk-button uk-button-default">จัดการทีม</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Scrim -->
+    <div class="uk-container uk-padding-small uk-margin-top">
+        <h1 class="uk-heading-divider">About Scrim</h1>
+
+        <div class="uk-child-width-1-2@s" uk-grid>
+            <div>
+                <div class="uk-light uk-background-secondary uk-padding">
+                    <h3>การจองห้องซ้อม</h3>
+                    <button class="uk-button uk-button-default">อ่านเพิ่ม</button>
+                </div>
+            </div>
+            <div>
+                <div class="uk-light uk-background-secondary uk-padding">
+                    <h3>กฏห้องซ้อม</h3>
+                    <button class="uk-button uk-button-default">อ่านเพิ่ม</button>
+                </div>
+            </div>
+            <!-- <div>
+                <div class="uk-light uk-background-primary uk-padding">
+                    <h3>ช่องทางเข้าร่วม</h3>
+                    <a href="https://www.facebook.com/Lampang-City-E-sport-team-219913823327687" target="_blank"><button class="uk-button uk-button-default">Facebook</button></a>
+                    <a href="https://discord.gg/8q8vpT6uWx" target="_blank"><button class="uk-button uk-button-default">Discord</button></a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <%- include('parts/footer') %>
+</body>
+</html>

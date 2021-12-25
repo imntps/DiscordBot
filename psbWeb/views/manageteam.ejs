@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Team</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script>
+    <style>body{ height: 100vh;}</style>
+</head>
+<body class="uk-background-muted">
+    
+    <%- include('parts/header') %>
+    <%- include('parts/notify') %>
+    
+    <div class="uk-container uk-padding-small uk-margin-top">
+        <h1 class="uk-heading-divider">จัดการทีม </h1>
+        <form class="uk-form-horizontal uk-margin-large" method="post">
+
+            <div class="uk-child-width-1-2@s" uk-grid>
+                <div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ชื่อทีม <a href="#teamname-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="teamname" type="text" placeholder="<%= data.team %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ชื่อย่อทีม <a href="#teamtag-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="teamtag" type="text" placeholder="<%= data.tag %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 1 (IGN) <a href="#player1-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player1" type="text" placeholder="<%= data.players.player1 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 2 (IGN) <a href="#player2-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player2" type="text" placeholder="<%= data.players.player2 %>" disabled>
+                        </div>
+                    </div>
+                
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 3 (IGN) <a href="#player3-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player3" type="text" placeholder="<%= data.players.player3 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 4 (IGN) <a href="#player4-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player4" type="text" placeholder="<%= data.players.player4 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 5 (IGN) <a href="#player5-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player5" type="text" placeholder="<%= data.players.player5 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text">ผู้เล่นคนที่ 6 (IGN) <a href="#player6-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="player6" type="text" placeholder="<%= data.players.player6 %>" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="uk-margin">
+                        
+                        <div class="js-upload" uk-form-custom>
+                            <label class="uk-form-label" for="form-horizontal-text"><a href="#logo-edit" uk-toggle>แก้ไขโลโก้</a></label>
+                            <ul class="uk-thumbnav" uk-margin>
+                                <li class="uk-active"><img src="/images/logos/<%= data.logo %>" width="100" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text"><a href="https://www.remote.tools/remote-work/how-to-find-discord-id" target="_blank">ดิสคอร์ดไอดี</a> (สำหรับใช้คำสั่งจองห้องใน Discord) <a href="#owner1-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="owner1" type="text" placeholder="<%= data.owner1 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-horizontal-text"><a href="https://www.remote.tools/remote-work/how-to-find-discord-id" target="_blank">ดิสคอร์ดไอดี</a> (สำหรับใช้คำสั่งจองห้องใน Discord) <a href="#owner2-edit" uk-toggle>แก้ไข</a></label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" id="form-horizontal-text" name="owner2" type="text" placeholder="<%= data.owner2 %>" disabled>
+                        </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <a href="https://discord.com/channels/@me/916245592135565322" target="_blank"><button class="uk-button uk-button-secondary uk-margin-small-right" type="button" disabled>ลืมรหัส</button></a>
+                    </div>
+
+                    <div class="uk-margin">
+                        <button class="uk-button uk-button-secondary uk-margin-small-right" type="button" uk-toggle="target: #confirm-delete">ลบทีม</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <%- include('parts/footer') %>
+
+    <!-- Model -->
+    <%- include('models/confirm-delete') %>
+    <%- include('models/teamname-edit') %>
+    <%- include('models/teamtag-edit') %>
+    <%- include('models/players-edit') %>
+    <%- include('models/owners-edit') %>
+    <%- include('models/logo-edit') %>
+</body>
+</html>

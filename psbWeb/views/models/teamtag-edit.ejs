@@ -1,0 +1,17 @@
+<div id="teamtag-edit" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">เปลี่ยนชื่อย่อทีม</h2>
+
+        <form class="uk-form-horizontal uk-margin-large" method="post" action="/teamtagedit">
+            <div class="uk-margin">
+                <input class="uk-input" id="form-horizontal-text" name="_id" type="hidden" value="<%= data._id %>">
+                <input class="uk-input" id="form-horizontal-text" name="teamtag" type="text" placeholder="ชื่อย่อทีมใหม่">
+            </div>
+
+            <div class="uk-margin">
+                <button class="uk-button uk-button-primary" type="submit">ยืนยัน</button>
+                <button class="uk-button uk-button-default uk-modal-close" type="button">ยกเลิก</button>
+            </div>
+        </form>
+    </div>
+</div>

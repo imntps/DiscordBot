@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script>
+    <style>body{ height: 100vh;}</style>
+</head>
+<body class="uk-background-muted">
+    
+    <%- include('parts/header') %>
+    <%- include('parts/notify') %>
+    
+    <!-- Menu Scrim -->
+    <div class="uk-container uk-padding-small uk-margin-top">
+        <h1 class="uk-heading-divider">Login</h1>
+
+       <div class="uk-position-center">
+        <form action="/logincheck" method="post">
+
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon" uk-icon="icon: user"></span>
+                    <input class="uk-input" type="text" name="user" placeholder="ดิสคอร์ดไอดี" required>
+                </div>
+            </div>
+        
+            <div class="uk-margin">
+                <div class="uk-inline">
+                    <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                    <input class="uk-input" type="password" name="secret" type="text" minlength="6" maxlength="6" pattern="[0-9]+" placeholder="รหัส" required>
+                </div>
+            </div>
+
+            <button class="uk-button uk-button-primary" type="submit">login</button>
+        
+        </form>
+       </div>
+    </div>
+
+</body>
+</html>
