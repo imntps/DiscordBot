@@ -1,0 +1,12 @@
+{
+    "bot":{
+        "clientId":891595307845029888,
+        "guildId":738012734771167353,
+        "token":"ODkxNTk1MzA3ODQ1MDI5ODg4.YVAo1g._NnaqLNvVdaOj-wFmr6PK2w9L8c"
+    },
+    "db":{
+        "host":"localhost",
+        "port":27017,
+        "dbName":"worldfood"
+    }
+}
